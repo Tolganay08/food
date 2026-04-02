@@ -1,0 +1,22 @@
+{
+  "name": "fooddash",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "db:migrate": "cd backend && npx prisma migrate dev",
+    "db:seed": "cd backend && npx prisma db seed",
+    "db:generate": "cd backend && npx prisma generate",
+    "build": "cd frontend && npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.0"
+  }
+}
